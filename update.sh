@@ -156,9 +156,9 @@ function create_variant() {
 	#for arch in i386 amd64; do
 	#	travisEnv='    - env: VERSION='"$1"' VARIANT='"$variant"' ARCH='"$arch"'\n'"$travisEnv"
 	#done
-	travisEnv='    -env: VERSION=16.0 VARIANT=fpm-alpine ARCH=i386
-    -env: VERSION=16.0 VARIANT=fpm ARCH=i386
-    -env: VERSION=18.0 VARIANT=fpm-alpine ARCH=i386'
+	travisEnv='    - env: VERSION=16.0 VARIANT=fpm-alpine ARCH=i386
+    - env: VERSION=16.0 VARIANT=fpm ARCH=i386
+    - env: VERSION=18.0 VARIANT=fpm-alpine ARCH=i386'
 }
 
 find . -maxdepth 1 -type d -regextype sed -regex '\./[[:digit:]]\+\.[[:digit:]]\+\(-rc\|-beta\|-alpha\)\?' -exec rm -r '{}' \;
